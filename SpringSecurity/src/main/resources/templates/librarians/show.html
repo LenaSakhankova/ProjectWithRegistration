@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Show</title>
+</head>
+<body>
+<p th:text="${librarian.getLast_name() + ' ' + librarian.getFirst_name() + ' ' + librarian.getPatronymic() + ', '+
+librarian.getPhone() + ', ' + librarian.getAddress()}">VALUE</p>
+
+
+<form th:method="GET" th:action="@{/librarians/{id}/edit(id=${librarian.getLibrarian_id()})}">
+  <input type="submit" value="EDIT"/>
+</form>
+
+<form th:method="DELETE" th:action="@{/librarians/{id}(id=${librarian.getLibrarian_id()})}">
+  <input type="submit" value="Delete"/>
+</form>
+<br><a href="/adminPage">Главное меню</a>
+</body>
+</html>

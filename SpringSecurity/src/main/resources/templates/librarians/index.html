@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+</head>
+<body>
+
+<div th:each="librarian : ${librarians}">
+  <a th:href="@{/librarians/{id}(id=${librarian.getLibrarian_id()})}"
+     th:text="${librarian.getLast_name() + ' ' + librarian.getFirst_name() + ' ' + librarian.getPatronymic() + ',  '
+     + librarian.getPhone()}">Librarian</a>
+  <br>
+</div>
+<br/>
+<hr/>
+
+<a href="/librarians/new">Create new librarian</a>
+<br><a href="/adminPage">Главное меню</a>
+</body>
+</html>

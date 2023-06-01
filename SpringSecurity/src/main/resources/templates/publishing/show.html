@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Show</title>
+</head>
+<body>
+<p th:text="${publ.getIdpublishing() + ') ' + publ.getPhone() + ',  ' + publ.getAdress()}">VALUE</p>
+
+<form th:method="GET" th:action="@{/publishing/{id}/edit(id=${publ.idpublishing})}">
+  <input type="submit" value="EDIT"/>
+</form>
+<br><a href="/hello">Главное меню</a>
+</body>
+</html>

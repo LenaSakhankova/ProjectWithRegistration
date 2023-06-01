@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Debtors</title>
+</head>
+<body>
+<h1>Задолжники:</h1>
+<table style = 'display: inline;'>
+    <thead>
+    <tr>
+        <th>Person ID</th>
+        <th>Book ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="debtor : ${debtors}">
+        <td th:text="${debtor.personId}"></td>
+        <td th:text="${debtor.bookId}"></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+<table style = 'display: inline;'>
+    <thead>
+    <tr>
+        <th>Book name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.getName()}"></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+<table style = 'display: inline;'>
+    <thead>
+    <tr>
+        <th>FIO</th>
+        <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <td></td>
+    <tr th:each="readers : ${reader}">
+        <td th:text="${readers.getFIO()}"></td>
+        <td th:text="${readers.getPhone_number()}"></td>
+    </tr>
+    </tbody>
+</table>
+<br><a href="/hello">Главное меню</a>
+</body>
+</html>

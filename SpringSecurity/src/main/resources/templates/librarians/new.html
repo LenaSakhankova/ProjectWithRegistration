@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/librarians}" th:object="${librarians}">
+    <label for="LastName"> Enter lastName: </label>
+    <input id="LastName"
+           th:field="*{last_name}"
+           type="text"/>
+    <div style="color:red" th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}">LastName Error</div>
+    <br/>
+    <label for="firstName">Enter name: </label>
+    <input type="text" th:field="*{first_name}" id="firstName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}">firstName Error</div>
+    <br/>
+    <label for="patronymic">Enter patronymic: </label>
+    <input type="text" th:field="*{patronymic}" id="patronymic"/>
+    <div style="color:red" th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}">patronymic Error</div>
+    <br/>
+    <label for="phone_number">Enter phoneNumber: </label>
+    <input type="text" th:field="*{phone}" id="phone_number"/>
+    <div style="color:red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">phone_number Error</div>
+    <br/>
+    <label for="address">Enter address: </label>
+    <input type="text" th:field="*{address}" id="address"/>
+    <div style="color:red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}">address Error</div>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>

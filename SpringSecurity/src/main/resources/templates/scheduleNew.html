@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавление графика</title>
+</head>
+<body>
+<h1>Добавление графика</h1>
+<form th:method="GET" th:action="@{/schedule/create}" th:object="${schedule}">
+  <label for="librarian_id"> Enter librarian_id: </label>
+  <input type="text" th:field="*{librarian_id}" id="librarian_id"/>
+  <div style="color:red" th:if="${#fields.hasErrors('librarian_id')}" th:errors="*{librarian_id}">librarian_id Error</div>
+  <br/>
+  <label for="work_days">Work days: </label>
+  <input type="text" th:field="*{work_days}" id="work_days"/>
+  <div style="color:red" th:if="${#fields.hasErrors('work_days')}" th:errors="*{work_days}">Work_days Error</div>
+  <br/>
+  <label for="timetable">Enter timetable: </label>
+  <input type="text" th:field="*{timetable}" id="timetable"/>
+  <div style="color:red" th:if="${#fields.hasErrors('timetable')}" th:errors="*{timetable}">Timetable Error</div>
+  <br/>
+  <label for="department">Enter department: </label>
+  <input type="text" th:field="*{department}" id="department"/>
+  <div style="color:red" th:if="${#fields.hasErrors('department')}" th:errors="*{department}">Department Error</div>
+  <br/>
+  <label for="kabinet">Enter kabinet: </label>
+  <input type="text" th:field="*{kabinet}" id="kabinet"/>
+  <div style="color:red" th:if="${#fields.hasErrors('kabinet')}" th:errors="*{kabinet}">Kabinet Error</div>
+  <br/>
+  <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

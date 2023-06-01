@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Издательства</title>
+</head>
+<body>
+<h1>Авторы библиотеки:</h1>
+<table style = 'display: inline;'>
+    <thead>
+    <tr>
+        <th>Фамилия</th>
+        <th></th><th></th>
+        <th>Имя</th>
+        <th></th><th></th>
+        <th>Номер изд.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="a : ${author}">
+        <td th:text="${a.lastName}"></td>
+        <td></td><td></td>
+        <td th:text="${a.firstName}"></td>
+        <td></td><td></td>
+        <td th:text="${a.publishingId}"></td>
+    </tr>
+    </tbody>
+</table >
+
+<h1>Издательства:</h1>
+<table style = 'display: inline;'>
+    <thead>
+    <tr>
+        <th>№</th>
+        <th></th><th></th>
+        <th>Телефон</th>
+        <th></th><th></th>
+        <th>Адрес</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="publ : ${pub}">
+        <td th:text="${publ.idpublishing}"></td>
+        <td></td><td></td>
+        <td th:text="${publ.phone}"></td>
+        <td></td><td></td>
+        <td><a th:href="@{/publishing/{id}(id=${publ.idpublishing})}"
+               th:text="${publ.adress}">address</a></td>
+    </tr>
+    </tbody>
+</table>
+<br><a href="/hello">Главное меню</a>
+</body>
+</html>

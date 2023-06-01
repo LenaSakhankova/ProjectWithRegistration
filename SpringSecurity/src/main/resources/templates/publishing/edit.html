@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update</title>
+</head>
+<body>
+
+<form th:method="GET" th:action="@{/publishing/{id}(id=${publ.getIdpublishing()})}" th:object="${publ}">
+  <label for="adress">Enter address: </label>
+  <input type="text" th:field="*{adress}" id="adress"/>
+  <div style="color:red" th:if="${#fields.hasErrors('adress')}" th:errors="*{adress}">adress Error</div>
+  <br/>
+  <label for="phone">Enter phoneNumber: </label>
+  <input type="text" th:field="*{phone}" id="phone"/>
+  <div style="color:red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">phone Error</div>
+  <br/>
+  <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

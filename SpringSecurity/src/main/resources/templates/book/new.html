@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New book</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/books}" th:object="${book}">
+  <label for="name"> Enter name of the book: </label>
+  <input type="text" th:field="*{name}" id="name"/>
+  <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+  <br/>
+  <label for="year">Enter year of publishing book: </label>
+  <input type="text" th:field="*{year}" id="year"/>
+  <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</div>
+  <br/>
+  <label for="shortDescription">Enter shortDescription of publishing book: </label>
+  <input type="text" th:field="*{shortDescription}" id="shortDescription"/>
+  <div style="color:red" th:if="${#fields.hasErrors('shortDescription')}" th:errors="*{shortDescription}">
+    shortDescription Error</div>
+  <br/>
+  <label for="storageLocation">Enter storageLocation of publishing book: </label>
+  <input type="text" th:field="*{storageLocation}" id="storageLocation"/>
+  <div style="color:red" th:if="${#fields.hasErrors('storageLocation')}" th:errors="*{storageLocation}">
+    storageLocation Error</div>
+  <br/>
+  <label for="tom">Enter tom of publishing book: </label>
+  <input type="text" th:field="*{tom}" id="tom"/>
+  <div style="color:red" th:if="${#fields.hasErrors('tom')}" th:errors="*{tom}">Tom Error</div>
+  <br/>
+  <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

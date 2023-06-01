@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book in use</title>
+</head>
+<body>
+<h1>Книги в использовании:</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Название</th>
+    <th>Номер читателя</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="a : ${books}">
+    <td th:text="${a.name}"></td>
+    <td></td><td></td>
+    <td th:text="${a.personId}"></td>
+  </tr>
+  </tbody>
+</table >
+<br><a href="/hello">Главное меню</a>
+<br><a href="/adminPage">Главное администратора</a>
+</body>
+</html>
